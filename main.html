@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignifEye: Sign Language Translator</title>
+    <link rel="icon" href="img/favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="styles.css">
+
+    <!--icons outlined-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+    <!--inter font link-->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo-branding">
+            <img src="img/logo.png" alt="SignifEye Logo">
+            <h1>SignifEye</h1>
+        </div>
+        <div class="settings">
+            <button id="settings-btn">
+                <span class="material-symbols-outlined">settings</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="camera-section" id="camera-section">
+        <div class="camera-preview">
+            <p>No camera detected</p>
+        </div>
+        <div class="camera-controls">
+            <button id="start-camera" class="btn">Start Recognition</button>
+            <button id="stop-camera" class="btn">Stop Recognition</button>
+        </div>
+    </div>
+
+    <div class="output-section">
+        <div class="output-controls">
+            <div class="language-area">
+                <img src="img/ph-flag.webp" alt="flag">
+                <p id="langauge-text">Filipino Sign Language</p>
+            </div>
+            <div class="output-type">
+                <span class="material-symbols-outlined">volume_up</span>
+                <p id="output">Speech Output</p>
+            </div>
+        </div>
+        <div class="text-output-display">
+            <p id="output-text">Text output...</p>
+        </div>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
