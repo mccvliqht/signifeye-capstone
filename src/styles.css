@@ -1,0 +1,197 @@
+:root {
+    --main-color: #17273E;
+    --red-btn-bg: FF383C;
+    --bg-color: #F9F9F9;
+    --dark-color: #454545;
+    --light-color: #F5F5F5;
+    --light-btn-bg: #17273E36;
+    --stop-btn-bg: #FF383C;
+    --border-radius: 10px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--main-color);
+}
+
+.header-content { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 25px 40px;
+    height: 14vh;
+}
+
+.logo-branding {
+    display: flex;
+    align-items: center;
+
+}
+
+.logo-branding h1 {
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.logo-branding img {
+    height: 75px;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+.settings {
+    padding-top: 10px;
+}
+.settings button{
+    border: none;
+    background: none;
+    color: var(--main-color);
+}
+
+.settings button .material-symbols-outlined {
+    font-size: clamp(45px, 3vw, 90px);
+}
+
+.settings button .material-symbols-outlined:hover {
+    color: var(--dark-color)
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    min-height: 70vh;
+    flex-wrap: wrap;
+    padding: 0 70px;
+}
+
+.camera-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 400px;
+    width: auto;
+}
+
+.camera-preview {
+    min-width: 85vh;
+    min-height: 60vh;
+    margin: 10px;
+    background-color: #d9d9d9;
+    border-radius: var(--border-radius);
+}
+
+.camera-preview p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    color: #8b8b8b;
+    font-weight: bolder;
+}
+
+.camera-controls {
+    display: flex;
+    gap: 110px;
+    margin: 10px;
+    min-height: 4vh;
+}
+
+.camera-controls .btn {
+    padding: 13px 45px;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#start-camera {
+    background-color: var(--main-color);
+    color: var(--light-color);
+}
+
+#stop-camera {
+    background-color: var(--stop-btn-bg);
+    color: var(--light-color);
+}
+
+#stop-camera:hover, #start-camera:hover {
+    background-color: var(--dark-color);
+}
+
+.output-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 2 400px;
+    width: auto;
+}
+
+.output-section .output-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-width: 70vh;
+    margin: 100px 0 55px 0;
+}
+
+.output-section .output-controls .language-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 50%;
+    border: 2px solid var(--dark-color);
+    border-right: 0;
+    background-color: var(--light-color);
+}
+
+.output-section .output-controls .language-area img {
+    height: 40px;
+    width: 40px;
+}
+
+.output-section .output-controls .language-area p {
+    font-size: 18px;
+    font-weight: 550;
+    color: var(--dark-color);
+}
+
+.output-section .output-controls .output-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 50%;
+    border: 2px solid var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.output-section .output-controls .output-type .material-symbols-outlined {
+    font-size: clamp(20px, 3vw, 40px);
+    color: var(--main-color);
+}
+
+.output-section .output-controls .output-type p {
+    font-size: 18px;
+    font-weight: 550;
+    color: var(--dark-color);
+}
+
+
+.output-section .text-output-display {
+    width: 70vh;
+    height: 28vh;
+    padding: 20px;
+    padding-top: 10px;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.output-section .text-output-display p {
+    font-size: 18px;
+}
