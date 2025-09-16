@@ -1,4 +1,4 @@
-function Header() {
+function Header({ onOpenSettings }) {
   return (
     <header>
       <div className="header-content">
@@ -6,8 +6,8 @@ function Header() {
           <img src="/img/logo.png" alt="SignifEye Logo" />
           <h1>SignifEye</h1>
         </div>
-        <div className="settings">
-          <button id="settings-btn">
+        <div className="settings-logo">
+          <button id="settings-btn" onClick={onOpenSettings}>
             <span className="material-symbols-outlined">settings</span>
           </button>
         </div>
