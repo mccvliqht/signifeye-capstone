@@ -18,8 +18,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 40px 25px 40px;
-    height: 14vh;
+    padding: clamp(10px, 3vw, 30px) clamp(15px, 4vw, 40px);
+    min-height: 10vh;
 }
 
 .logo-branding {
@@ -29,13 +29,13 @@ body {
 }
 
 .logo-branding h1 {
-    font-size: 45px;
+    font-size:clamp(24px, 3vw, 45px); ;
     cursor: pointer;
 }
 
 .logo-branding img {
-    height: 75px;
-    margin-right: 3px;
+    height: clamp(40px, 8vw, 75px);;
+    margin-right: 5px;
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ main {
     justify-content: space-between;
     min-height: 70vh;
     flex-wrap: wrap;
-    padding: 0 70px;
+    padding: 0 clamp(20px, 5vw, 70px);
 }
 
 .camera-section {
@@ -74,8 +74,9 @@ main {
 }
 
 .camera-preview {
-    min-width: 85vh;
-    min-height: 60vh;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 4 / 3;
     margin: 10px;
     background-color: #d9d9d9;
     border-radius: var(--border-radius);
@@ -85,23 +86,25 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90%;
+    height: 100%;
     color: #8b8b8b;
     font-weight: bolder;
 }
 
 .camera-controls {
     display: flex;
-    gap: 110px;
+    gap: clamp(15px, 4vw, 50px);
     margin: 10px;
     min-height: 4vh;
+    flex-wrap: wrap; 
+    justify-content: center;
 }
 
 .camera-controls .btn {
-    padding: 13px 45px;
+    padding: 0.8em 2em;
     border-radius: var(--border-radius);
     border: none;
-    font-size: 17px;
+    font-size: clamp(14px, 1.5vw, 18px);
     font-weight: bold;
     margin-top: 20px;
 }
@@ -132,8 +135,11 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    min-width: 70vh;
-    margin: 100px 0 55px 0;
+    width: 80%;
+    max-width: 750px;
+    margin: clamp(20px, 6vw, 80px) 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .output-section .output-controls .language-area {
@@ -142,19 +148,20 @@ main {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    width: 50%;
+    flex: 1;
+    min-width: 250px;
     border: 2px solid var(--dark-color);
-    border-right: 0;
     background-color: var(--light-color);
+    padding: 0.4em 0.5em;
 }
 
 .output-section .output-controls .language-area img {
-    height: 40px;
-    width: 40px;
+    height: clamp(25px, 3vw, 40px);;
+    width: auto;
 }
 
 .output-section .output-controls .language-area p {
-    font-size: 18px;
+    font-size: clamp(12px, 1.5vw, 18px);
     font-weight: 550;
     color: var(--dark-color);
 }
@@ -165,9 +172,11 @@ main {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    width: 50%;
+    flex: 1;
+    min-width: 200px;
     border: 2px solid var(--dark-color);
     background-color: var(--light-color);
+    padding: 0.4em 0.5em;
 }
 
 .output-section .output-controls .output-type .material-symbols-outlined {
@@ -176,22 +185,22 @@ main {
 }
 
 .output-section .output-controls .output-type p {
-    font-size: 18px;
+    font-size: clamp(12px, 1.5vw, 18px);
     font-weight: 550;
     color: var(--dark-color);
 }
 
 
 .output-section .text-output-display {
-    width: 70vh;
-    height: 28vh;
-    padding: 20px;
-    padding-top: 10px;
+    width: 80%;
+    max-width: 750px;
+    min-height: 300px;
+    padding: 1em;
     border-radius: var(--border-radius);
     border: 2px solid var(--dark-color);
     background-color: var(--light-color);
 }
 
 .output-section .text-output-display p {
-    font-size: 18px;
+    font-size: clamp(14px, 1.5vw, 18px);
 }
