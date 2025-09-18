@@ -205,7 +205,7 @@ main {
     font-size: clamp(14px, 1.5vw, 18px);
 }
 
-/*settings css*/
+/*settings modal css*/
 
 .settings-overlay {
   position: fixed;
@@ -224,20 +224,25 @@ main {
   background: #fff;
   padding: 20px;
   border-radius: 12px;
-  width: 400px;
+  width: 500px;
+  height: clamp(300px, 40vh, 450px);
   max-width: 90%; 
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .settings-title {
-  display: flex;
-  gap: 60%;
-  align-items: center;
-  margin-bottom: 15px;
+    margin: 5px 0 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .settings-title h2 {
-  margin: 0;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    font-size: clamp(30px, 3vw, 40px);
 }
 
 .settings-title span {
@@ -249,4 +254,20 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-control .settings-btn {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.settings-control .settings-btn button {
+    border-radius: 25px;
+    border: none;
+    padding: 1em .5em;
+    width: clamp(120px, 20vw, 220px);
+    font-size: clamp(14px, 1.5vw, 18px);
 }

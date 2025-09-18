@@ -9,24 +9,24 @@ function Settings ({onClose}) {
 
             <div className="settings-control">
 
-                <div className="lang">
+                <div className="settings-btn">
                     <button className="asl">ASL</button>
                     <button className="fsl">FSL</button>
                 </div>
 
-                <div className="output">
+                <div className="settings-btn">
                     <button className="speech">Speech</button>
                     <button className="text">Text</button>
                 </div>
 
-                <div className="theme">
+                <div className="settings-btn">
                     <button className="dark-mode">Dark</button>
                     <button className="light-mode">Light</button>
                 </div>
 
-                <div className="font-size">
-                    <input type="number" placeholder="Type here..."/>
-                    <button id="font-size-btn">Edit</button>
+                <div className="settings-btn">
+                    <button className="font-display">16</button>
+                    <button className="font-size-btn">Edit</button>
                 </div>
 
                 <button id="save-button">Save Changes</button>
