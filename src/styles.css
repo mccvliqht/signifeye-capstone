@@ -4,7 +4,7 @@
     --bg-color: #F9F9F9;
     --dark-color: #454545;
     --light-color: #F5F5F5;
-    --light-btn-bg: #17273E36;
+    --light-btn-bg: #e0e1e4;
     --stop-btn-bg: #FF383C;
     --border-radius: 10px;
 }
@@ -208,66 +208,107 @@ main {
 /*settings modal css*/
 
 .settings-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; 
 }
 
 .settings {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 500px;
-  height: clamp(300px, 40vh, 450px);
-  max-width: 90%; 
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    width: fit-content;
+    height: fit-content;
+    max-width: 90%; 
+    max-height: 90vh;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .settings-title {
-    margin: 5px 0 20px 20px;
+    margin: 0px 10px 30px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .settings-title h2 {
     margin: 0;
     flex: 1;
     text-align: center;
-    font-size: clamp(30px, 3vw, 40px);
+    margin-left: 30px;
+    font-size: clamp(30px, 2vw, 60px);
 }
 
 .settings-title span {
-  font-size: clamp(20px, 3vw, 40px);
-  cursor: pointer;
+    font-size: clamp(20px, 3vw, 40px);
+    cursor: pointer;
+    position: absolute; 
+    top: 18px;         
+    right: 18px;      
 }
 
 .settings-control {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .settings-control .settings-btn {
     display: flex;
     justify-content: space-evenly;
-    gap: 15px;
+    gap: 12px;
+    align-items: center;
+}
+
+.settings-control .settings-btn h3 {
+    flex: 0 0 150px;
+    font-size: clamp(13px, 1.5vw, 26px);
+    text-align: center;
 }
 
 .settings-control .settings-btn button {
-    border-radius: 25px;
+    border-radius: var(--border-radius);
     border: none;
-    padding: 1em .5em;
-    width: clamp(120px, 20vw, 220px);
+    padding: .5em;
+    width: clamp(90px, 15vw, 180px);
+    height: clamp(25px, 4vw, 50px);
+    font-size: clamp(15px, 1vw, 20px);
+    background-color: var(--light-btn-bg);
+    color: var(--main-color);
+    font-weight:550;
+}
+
+.settings-control .settings-btn button:hover {
+    background-color: var(--main-color);
+    color: var(--light-color);
+}
+
+.settings-control .settings-btn button.active {
+    background-color: var(--main-color); 
+    color: white;
+}
+
+
+.settings-control #save-btn {
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 0.8em 2em;
+    border-radius: var(--border-radius);
+    border: none;
     font-size: clamp(14px, 1.5vw, 18px);
+    background-color: var(--main-color);
+    color: var(--light-color);
+}
+
+.settings-control #save-btn:hover {
+    background-color: var(--dark-color);
 }

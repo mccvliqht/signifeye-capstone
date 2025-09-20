@@ -8,6 +8,10 @@ import "./styles.css";
 function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
+  const [selectedLang, setSelectedLang] = useState("FSL");
+  const [selectedOutput, setSelectedOutput] = useState("Text");
+  const [selectedTheme, setSelectedTheme] = useState("Light");
+
   return (
     <div>
       <Header onOpenSettings={() => setIsSettingsOpen(true)} />
@@ -18,7 +22,18 @@ function App() {
       </main>
 
       {isSettingsOpen && (
-        <Settings onClose={() => setIsSettingsOpen(false)} />
+        <Settings 
+          onClose={() => setIsSettingsOpen(false)}
+          savedLang={selectedLang}
+          savedOutput={selectedOutput}
+          savedTheme={selectedTheme}
+          onSave={(lang, output, theme) => {
+            setSelectedLang(lang);
+            setSelectedOutput(output);
+            setSelectedTheme(theme);
+            setIsSettingsOpen(false); 
+          }}
+        />
       )}
     </div>
   );
