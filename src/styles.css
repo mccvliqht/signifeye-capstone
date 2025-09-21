@@ -3,10 +3,75 @@
     --red-btn-bg: FF383C;
     --bg-color: #F9F9F9;
     --dark-color: #454545;
+    --dbg-color: #121212;
+    --dpt-color: #E0E0E0;
     --light-color: #F5F5F5;
     --light-btn-bg: #e0e1e4;
     --stop-btn-bg: #FF383C;
     --border-radius: 10px;
+}
+
+/* DARK THEME */
+/* Dark theme wrapper */
+.app {
+  min-height: 100vh; /* gawin siyang full height */
+  width: 100%;
+}
+
+.app.dark-mode header,
+.app.dark-mode main,
+.app.dark-mode .settings {
+  background-color: transparent; /* para sumabay sa parent bg */
+}
+
+.app.dark-mode {
+  background-color: var(--dbg-color);
+  color: var(--dpt-color);
+
+}
+
+/* Para sa header at buttons */
+.app.dark-mode header {
+  background-color: var(--dbg-color);
+  color: var(--dpt-color);
+}
+
+.app.dark-mode button {
+  background-color: #333;
+  color: var(--dpt-color);
+}
+
+.app.dark-mode button.active {
+  background-color: #555;
+}
+
+.app.dark-mode .output-section {
+  background: var(--dbg-color);
+}
+
+.app.dark-mode .text-output-display,
+.app.dark-mode .output-section .output-controls .language-area,
+.app.dark-mode .output-section .output-controls .output-type {
+  background: #333;
+  border: 1px solid #555;
+}
+
+.app.dark-mode .output-section .output-controls .output-type p,
+.app.dark-mode .output-section .output-controls .language-area p,
+.app.dark-mode .output-section .output-controls .output-type .material-symbols-outlined {
+  color: var(--dpt-color);
+}
+
+.app.dark-mode .settings-logo button{
+    border: none;
+    background: none;
+    color: var(--dpt-color);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
@@ -190,7 +255,6 @@ main {
     color: var(--dark-color);
 }
 
-
 .output-section .text-output-display {
     width: 80%;
     max-width: 750px;
@@ -312,3 +376,48 @@ main {
 .settings-control #save-btn:hover {
     background-color: var(--dark-color);
 }
+
+/* --- Font size row layout --- */
+.font-size-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#font-display {
+    border-radius: var(--border-radius);
+    border: none;
+    padding: .5em;
+    width: clamp(90px, 15vw, 180px);
+    height: clamp(25px, 4vw, 50px);
+    font-size: clamp(15px, 1vw, 20px);
+    background-color: var(--light-btn-bg);
+    color: var(--main-color);
+    font-weight:550;
+}
+
+.font-size-controls {
+  display: flex;
+  gap: 8px;
+  margin-left: 6px;
+}
+
+#font-decrement,
+#font-increment {
+    border-radius: var(--border-radius);
+    border: none;
+    padding: .5em;
+    width: clamp(45px, 15vw, 85px);
+    height: clamp(12px, 4vw, 50px);
+    font-size: clamp(15px, 1vw, 20px);
+    background-color: var(--light-btn-bg);
+    color: var(--main-color);
+    font-weight:550;
+}
+
+#font-decrement:hover,
+#font-increment:hover {
+  background-color: var(--main-color);
+  color: var(--light-color);
+}
+
