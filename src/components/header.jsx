@@ -3,7 +3,8 @@ function Header({ onOpenSettings }) {
     <header>
       <div className="header-content">
         <div className="logo-branding">
-          <img src="/img/logo.png" alt="SignifEye Logo" />
+          <img src="/img/logo.png" alt="SignifEye Logo" className="logo-light" />
+          <img src="/img/logo-lighter.png" alt="SignifEye Logo Dark" className="logo-dark" />
           <h1>SignifEye</h1>
         </div>
         <div className="settings-logo">

@@ -1,66 +1,105 @@
 :root {
     --main-color: #17273E;
-    --red-btn-bg: FF383C;
+    --dbg-main-color: #355A99;
     --bg-color: #F9F9F9;
     --dark-color: #454545;
     --dbg-color: #121212;
     --dpt-color: #E0E0E0;
     --light-color: #F5F5F5;
     --light-btn-bg: #e0e1e4;
-    --stop-btn-bg: #FF383C;
+    --stop-btn-bg: #ec1f23;
     --border-radius: 10px;
 }
 
 /* DARK THEME */
 /* Dark theme wrapper */
 .app {
-  min-height: 100vh; /* gawin siyang full height */
-  width: 100%;
+    min-height: 100vh; /* gawin siyang full height */
+    width: 100%;
 }
 
 .app.dark-mode header,
-.app.dark-mode main,
+.app.dark-mode main {
+    background-color: transparent;
+}
+
+/* Default (light mode) */
+.logo-dark { 
+    display: none; }
+
+/* Dark mode swaps */
+.app.dark-mode .logo-light { 
+    display: none; 
+}
+
+.app.dark-mode .logo-dark { 
+    display: inline; 
+}
+
+.app.dark-mode #start-camera {
+    background-color: var(--dbg-main-color);
+    color: var(--light-color);
+}
+
+.app.dark-mode #start-camera:hover {
+    background-color: var(--dark-color);
+}
+
 .app.dark-mode .settings {
-  background-color: transparent; /* para sumabay sa parent bg */
+    background-color: #1e1e1e; 
+}
+
+.app.dark-mode .settings-control .settings-btn button {
+    background-color: var(--light-btn-bg);
+    color: var(--main-color);
+}
+
+.app.dark-mode .settings-control .settings-btn button:hover {
+    background-color: var(--dbg-main-color);
+    color: var(--light-color);
+}
+
+.app.dark-mode .settings-control .settings-btn button.active {
+    background-color: var(--dbg-main-color); 
+    color: white;
+}
+
+.app.dark-mode .settings-control #save-btn {
+    background-color: var(--dbg-main-color);
+    color: var(--light-color);
+}
+
+.app.dark-mode .settings-control #save-btn:hover {
+    background-color: var(--dark-color);
+}
+
+.app.dark-mode #font-decrement:hover,
+.app.dark-mode #font-increment:hover {
+    background-color: var(--dbg-main-color);
+    color: var(--light-color);
 }
 
 .app.dark-mode {
-  background-color: var(--dbg-color);
-  color: var(--dpt-color);
-
-}
-
-/* Para sa header at buttons */
-.app.dark-mode header {
-  background-color: var(--dbg-color);
-  color: var(--dpt-color);
-}
-
-.app.dark-mode button {
-  background-color: #333;
-  color: var(--dpt-color);
-}
-
-.app.dark-mode button.active {
-  background-color: #555;
+    background-color: var(--dbg-color);
+    color: var(--dpt-color);
 }
 
 .app.dark-mode .output-section {
-  background: var(--dbg-color);
+    background: var(--dbg-color);
 }
 
 .app.dark-mode .text-output-display,
 .app.dark-mode .output-section .output-controls .language-area,
 .app.dark-mode .output-section .output-controls .output-type {
-  background: #333;
-  border: 1px solid #555;
+    background: #333;
+    border: 1px solid #555;
 }
 
 .app.dark-mode .output-section .output-controls .output-type p,
 .app.dark-mode .output-section .output-controls .language-area p,
 .app.dark-mode .output-section .output-controls .output-type .material-symbols-outlined {
-  color: var(--dpt-color);
-}
+    color: var(--dpt-color);
+}   
 
 .app.dark-mode .settings-logo button{
     border: none;
@@ -68,16 +107,20 @@
     color: var(--dpt-color);
 }
 
+/* General Styles */
+
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 body {
     font-family: 'Inter', sans-serif;
     color: var(--main-color);
 }
+
+/*header styles*/
 
 .header-content { 
     display: flex;
@@ -121,6 +164,8 @@ body {
     color: var(--dark-color)
 }
 
+/*main styles*/
+
 main {
     display: flex;
     justify-content: space-between;
@@ -143,17 +188,35 @@ main {
     max-width: 800px;
     aspect-ratio: 4 / 3;
     margin: 10px;
-    background-color: #d9d9d9;
     border-radius: var(--border-radius);
-}
-
-.camera-preview p {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    background-color: #d9d9d9; /* placeholder */
+    position: relative;
+}
+
+.camera-preview .material-symbols-outlined {
+    font-size: clamp(24px, 3vw, 48px);
+    color: #8b8b8b;
+    position: absolute;
+    top: 38%;
+}
+.camera-preview p {
     color: #8b8b8b;
     font-weight: bolder;
+    text-align: center;
+}
+
+.camera-preview.active {
+     background-color: transparent; /* remove gray when camera is on */
+}
+
+.camera-feed {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .camera-controls {
@@ -377,11 +440,10 @@ main {
     background-color: var(--dark-color);
 }
 
-/* --- Font size row layout --- */
 .font-size-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 #font-display {
@@ -397,9 +459,9 @@ main {
 }
 
 .font-size-controls {
-  display: flex;
-  gap: 8px;
-  margin-left: 6px;
+    display: flex;
+    gap: 8px;
+    margin-left: 6px;
 }
 
 #font-decrement,
@@ -417,7 +479,7 @@ main {
 
 #font-decrement:hover,
 #font-increment:hover {
-  background-color: var(--main-color);
-  color: var(--light-color);
+    background-color: var(--main-color);
+    color: var(--light-color);
 }
 
