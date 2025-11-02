@@ -482,3 +482,7 @@ main {
     background-color: var(--main-color);
     color: var(--light-color);
 }
+
+.camera-feed {
+  transform: scaleX(-1);
+}
