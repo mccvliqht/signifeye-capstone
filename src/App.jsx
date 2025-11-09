@@ -17,6 +17,9 @@ function App() {
   const [selectedTheme, setSelectedTheme] = useState("Light");
   const [fontSize, setFontSize] = useState(16);
 
+  // NEW: Prediction result from camera
+  const [prediction, setPrediction] = useState("");
+
   // MOBILE LAYOUT
   if (isMobile) {
     return (
@@ -26,7 +29,7 @@ function App() {
         }`}
       >
         <main className="main-content">
-          <MobileLayout/>
+          <MobileLayout />
         </main>
       </div>
     );
@@ -40,13 +43,15 @@ function App() {
       <Header onOpenSettings={() => setIsSettingsOpen(true)} />
 
       <main className="main-content">
-        <CameraSection />
+        <CameraSection onPrediction={setPrediction} />
         <OutputSection
           lang={selectedLang}
           output={selectedOutput}
           fontSize={fontSize}
+          predictedSign={prediction} // ✅ new prop
         />
       </main>
+
 
       {isSettingsOpen && (
         <Settings
