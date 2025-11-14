@@ -111,10 +111,10 @@ function CameraSection( {onPrediction}) {
       </div>
 
       <div className="camera-controls">
-        <button onClick={startCamera} className="btn">
+        <button onClick={startCamera} className="btn" id="start-camera">
           Start Recognition
         </button>
-        <button onClick={stopCamera} className="btn">
+        <button onClick={stopCamera} className="btn" id="stop-camera">
           Stop Recognition
         </button>
       </div>
